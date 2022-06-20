@@ -45,7 +45,7 @@ jobs:
           working-directory: ./asc-bundler
 
       - name: Cross build with all features
-        uses: JichouP/cargo@v1
+        uses: JichouP/cargo@master
         with:
           working-directory: ./asc-bundler
           use-cross: true
