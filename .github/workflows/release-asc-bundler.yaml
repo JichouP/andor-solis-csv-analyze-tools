@@ -43,6 +43,7 @@ jobs:
       - name: Cross build with all features
         uses: actions-rs/cargo@v1
         with:
+          working-directory: ./asc-bundler
           use-cross: true
           command: build
           args: --release --target ${{ matrix.target }} --all-features --verbose
@@ -50,6 +51,7 @@ jobs:
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@2.1.1
         with:
+          working-directory: ./asc-bundler
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: target/${{ matrix.target }}/release/${{ matrix.artifact_name }}
           asset_name: ${{ matrix.asset_name }}
