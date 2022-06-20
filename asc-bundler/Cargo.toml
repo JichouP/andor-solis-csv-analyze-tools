@@ -1,7 +1,7 @@
 [package]
-name = "asc-bundler"
-version = "0.1.0"
 edition = "2021"
+name = "asc-bundler"
+version = "0.0.1"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
