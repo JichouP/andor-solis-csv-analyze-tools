@@ -41,7 +41,7 @@ jobs:
           override: true
 
       - name: Cross build with all features
-        uses: actions-rs/cargo@v1
+        uses: JichouP/cargo@v1
         with:
           working-directory: ./asc-bundler
           use-cross: true
@@ -51,9 +51,8 @@ jobs:
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@2.1.1
         with:
-          working-directory: ./asc-bundler
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: target/${{ matrix.target }}/release/${{ matrix.artifact_name }}
+          file: asc-bundler/target/${{ matrix.target }}/release/${{ matrix.artifact_name }}
           asset_name: ${{ matrix.asset_name }}
           tag: ${{ github.ref }}
           overwrite: true
